@@ -1,4 +1,7 @@
 {
+    "terminal.integrated.env.windows": {
+        "PATH": "C:\\Users\\hugom\\micromamba\\envs\\hompack-fortran\\Library\\bin;${env:PATH}"
+    },
     "python.languageServer": "None",
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
