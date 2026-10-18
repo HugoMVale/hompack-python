@@ -46,6 +46,7 @@ custom_target(
 python.install_sources(
   [
   'src/hompack/__init__.py',
+  'src/hompack/_native.py',
   ],
   subdir: 'hompack'
 )
