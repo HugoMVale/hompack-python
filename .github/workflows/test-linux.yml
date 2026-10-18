@@ -61,14 +61,14 @@ jobs:
     #       uv run --frozen ./tests/example5.py
 
       - name: Upload coverage to Codecov
-        if: ${{ matrix.python-version == '3.14' }}
+        if: ${{ matrix.python-version == '3.12' }}
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: false
           
       - name: Upload test results to Codecov
-        if: ${{ matrix.python-version == '3.14' && !cancelled() }}
+        if: ${{ matrix.python-version == '3.12' && !cancelled() }}
         uses: codecov/test-results-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
