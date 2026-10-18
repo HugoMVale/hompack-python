@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
 
       - name: macOS - Set up Fortran
         if: runner.os == 'macOS'
@@ -51,7 +51,7 @@ jobs:
             bash ./cibw-scripts/repair_wheel_command_windows.sh {wheel} {dest_dir}
 
       - name: Upload wheels 
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
           path: ./wheelhouse/*.whl
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -69,7 +69,7 @@ jobs:
         run: pipx run build --sdist
 
       - name: Upload wheels 
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: cibw-sdist
           path: dist/*.tar.gz
@@ -84,7 +84,7 @@ jobs:
       id-token: write
     if: ${{ success() && github.event_name == 'release' && github.event.action == 'published' }}
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           pattern: cibw-*
           path: dist
@@ -103,7 +103,7 @@ jobs:
 #       id-token: write
 #     if: ${{ github.event_name == 'workflow_dispatch' }}
 #     steps:
-#       - uses: actions/download-artifact@v4
+#       - uses: actions/download-artifact@v8
 #         with:
 #           pattern: cibw-*
 #           path: dist
