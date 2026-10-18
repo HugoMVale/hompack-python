@@ -1,0 +1,20 @@
+{
+    "python.languageServer": "None",
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        },
+        "editor.rulers": [
+            90
+        ]
+    },
+    "ruff.lint.enable": true,
+    "ruff.configuration": {
+        "line-length": 90
+    },
+    "python.pyrefly.typeCheckingMode": "default",
+    "python.pyrefly.diagnosticMode": "workspace"
+}
